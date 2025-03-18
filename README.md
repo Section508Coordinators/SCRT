@@ -22,7 +22,7 @@ SCRT is a browser-based standalone application for recording accessibility test 
 9) You should save test results in both JSON (for editing) and HTML format (user-friendly) for future reference. <br/>
 
 ## Versioning
-You can access the latest version at [SCRTGitHubRepository](https://github.com/Section508Coordinators/SCRT). Department Of Homeland Security employees who don't have access to GitHub can use [SCRTGitHubRepository](https://maestro.dhs.gov/gitlab-ce/appdev/acrt). Bitbucket requires DHS Network and user authentication. <br />Let's work together to make this tool great for all! Feel free to contribute. 
+You can access the latest version at [SCRTGitHubRepository](https://github.com/Section508Coordinators/SCRT). Department Of Homeland Security employees who don't have access to GitHub can use [SCRTGitlabRepository](https://maestro.dhs.gov/gitlab-ce/appdev/acrt). Bitbucket requires DHS Network and user authentication. <br />Let's work together to make this tool great for all! Feel free to contribute. 
 **[Submit SCRT Issue](https://forms.office.com/pages/responsepage.aspx?id=bOfNPG2UEkq7evydCEI1Ss2mEhj9aoZIswA9Qjq0d75UMURVTThYWU1PN1NDWTQySDcyU1lCVlJDRS4u&origin=lprLink&route=shorturl)**
 
 ## Authors
