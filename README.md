@@ -7,7 +7,7 @@ Try [SCRT Here](https://section508coordinators.github.io/ACRT/)
 
 ## Getting Started
 1) Download the SCRT files to your local machine from the repository. The default location is the Downloads folder. On the [main page](https://github.com/Section508Coordinators/ACRT), select the Code button above and select "Download ZIP". Once downloaded, unzip/extract files. 
-2) Refer to the [ACRT Training Manual]( https://github.com/Section508Coordinators/ACRT/blob/master/Resources/SCRTTrainingManual.pdf) in the 'Resources' folder for detailed instructions. 
+2) Refer to the [SCRT Training Manual]( https://github.com/Section508Coordinators/ACRT/blob/master/Resources/SCRTTrainingManual.pdf) in the 'Resources' folder for detailed instructions. 
 
 
 ## Instructions
@@ -23,7 +23,7 @@ Try [SCRT Here](https://section508coordinators.github.io/ACRT/)
 9) You should save test results in both JSON (for editing) and HTML format (user-friendly) for future reference. <br/>
 
 ## Versioning
-You can access the latest version at [ACRTGitHubRepository](https://github.com/Section508Coordinators/ACRT). Department Of Homeland Security employees who don't have access to GitHub can use [ACRTBitbucketRepository](https://maestro.dhs.gov/stash/projects/APPDEV/repos/acrt/browse/acrt). Bitbucket requires DHS Network and user authentication. <br />Let's work together to make this tool great for all! Feel free to contribute. 
+You can access the latest version at [ACRTGitHubRepository](https://github.com/Section508Coordinators/ACRT). Department Of Homeland Security employees who don't have access to GitHub can use [SCRTBitbucketRepository](https://maestro.dhs.gov/stash/projects/APPDEV/repos/acrt/browse/acrt). Bitbucket requires DHS Network and user authentication. <br />Let's work together to make this tool great for all! Feel free to contribute. 
 **[Submit SCRT Issue](https://forms.office.com/pages/responsepage.aspx?id=bOfNPG2UEkq7evydCEI1Ss2mEhj9aoZIswA9Qjq0d75UMURVTThYWU1PN1NDWTQySDcyU1lCVlJDRS4u&origin=lprLink&route=shorturl)**
 
 ## Authors
