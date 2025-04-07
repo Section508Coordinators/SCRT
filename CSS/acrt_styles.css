@@ -160,20 +160,20 @@ background-color: #FFFF00;}
 }
 
 #fileinput:hover {
-  background-color:rgb(5, 154, 114);
+  background-color:rgb(34, 8, 69);
   color: white;
 }
 
 #fileinput:focus {
  /*background-color:rgb(192,192,192);
   color: black; */
-  background-color:rgb(5, 154, 114);
+  background-color:rgb(34, 8, 69);
   color: rgb(25,25,112);
  border: 1px solid rgb(25,25,112);
 }
 
  #fileinput:active {
-  background-color:rgb(5, 154, 114);
+  background-color:rgb(34, 8, 69);
   color: black;
 }
 
@@ -221,13 +221,13 @@ font-family: "Source Sans Pro", "Franklin Gothic Book", "system-ui", "Segoe UI",
  color: #ffffff;
 }
 .collapsible:hover{
-  background-color:rgb(5, 154, 114);
+  background-color:rgb(34, 8, 69);
   color: #ffffff;
 }
 .collapsible:focus {
  /*background-color:rgb(9, 9, 66);
  color: #ffffff; */
- background-color:rgb(5, 154, 114);
+ background-color:rgb(34, 8, 69);
  color: white;
  border: 1px solid rgb(25,25,112);
 }
@@ -239,13 +239,13 @@ font-family: "Source Sans Pro", "Franklin Gothic Book", "system-ui", "Segoe UI",
 button:focus  {
  /*background-color:rgb(9, 9, 66);
  color: #ffffff; */
- background-color:rgb(5, 154, 114);
+ background-color:rgb(34, 8, 69);
  color:white;
  border: 1px solid rgb(25,25,112);
 }
 
 button:hover  {
-  background-color:rgb(5, 154, 114);
+  background-color:rgb(34, 8, 69);
   color: #ffffff;
 }
 
@@ -497,7 +497,7 @@ h2,h3,h4 {font-weight: bold;
 }
 
 #sbtBtn:hover {
-  background-color:rgb(5, 154, 114);
+  background-color:rgb(34, 8, 69);
 }
 
 .input {
@@ -774,7 +774,7 @@ li a {
 
 /* Change the link color on hover */
 li a:hover {
-  background-color:rgb(5, 154, 114);
+  background-color:rgb(34, 8, 69);
   color: white;
 	font-family: "Source Sans Pro", "Franklin Gothic Book","system-ui", "Segoe UI", "Ubuntu", "'Helvetica Neue", "sans-serif";
 }
@@ -827,7 +827,7 @@ body {
 */
 
 .topnav a:hover {
- background-color:rgb(5, 154, 114);
+ background-color:rgb(34, 8, 69);
   color: white;
 }
 
