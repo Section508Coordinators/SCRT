@@ -47,8 +47,10 @@
 	    <li> If needed, open a copy of the <a href= "./Resources/Trusted Tester Test Process v5.1.3.pdf"  target="_blank" id="li-link" style="display:inline-block; color:blue;"><u>Trusted Tester Test Process</u>.</a> </li>	
 		<li>Trusted Testers should coordinate with their IT Project Manager regarding remediation details.</li>
 	  </ol>
-	</p><span id='selectFileHd' ng-hide = "fileInput1" >
-		<label for="fileinput" ><strong> Select template or test results JSON file </strong></label> <br> 
+	</p>
+	<h2> Select template or test results JSON file </h2>
+	<span id='selectFileHd' ng-hide = "fileInput1" >
+		
 
 		 <input type="file"  class="input" id="fileinput" name="Browse Input File"  title="Please select valid file" ng-model='selectedFile' onchange="angular.element(this).scope().fileNameChanged(this)" accept=".json"> <br>  <!--ng-click ="fileInput();"-->
 	  </span>
@@ -123,7 +125,9 @@
 <div class="content">
 
  <div class="divSpace" id="testersInfo" >
- <label for="CompanyName" class="required"> Company Name (Required<span ng-if="acrtInputForm.CompanyName.$valid" >, 100 chars max</span>): </label> <br><input type="string" ng-model="companyname" class= "betnTags" title="100 Chars max" placeholder ="Company Name, 100 chars max" id="companyname" name="CompanyName" ng-maxlength="100"   size="100" limit-to="100"> 
+ <label for="CompanyName" class="required"> Company name (Required<span ng-if="acrtInputForm.CompanyName.$valid" >, 50 chars max</span>): </label> <br><input type="string" ng-model="CompanyName" placeholder ="First Name, 50 chars max" class= "betnTags" id="CompanyName" name="Tester's CompanyName" title="50 Chars max" ng-maxlength="50"  size="50" limit-to="50">  
+ 
+ 
   <br><label for="firstname" class="required"> Tester's First Name (Required<span ng-if="acrtInputForm.TesterFirstName.$valid" >, 50 chars max</span>): </label> <br><input type="string" ng-model="firstname" placeholder ="First Name, 50 chars max" class= "betnTags" id="firstname" name="TesterFirstName" title="50 Chars max" ng-maxlength="50"  size="50" limit-to="50">    
    <br><label for="lastname" class="required"> Tester's Last Name (Required<span ng-if="acrtInputForm.TesterLastName.$valid" >, 50 chars max</span>): </label> <br><input type="string" ng-model="lastname" placeholder ="Last Name, 50 chars max" class= "betnTags" id="lastname" name="TesterLastName" title="50 Chars max" ng-maxlength="50"  size="50" limit-to="50"> 
   <br><label for="testerID"> Trusted Tester ID <span ng-if="acrtInputForm.TrustedTesterId.$valid" >(50 chars max)</span>: </label> <br><input type="string" ng-model="testerID" class= "betnTags" placeholder ="ID, 50 chars max" id="testerID" name="TrustedTesterId" title="50 Chars max" ng-maxlength="50" limit-to="50">    
@@ -168,16 +172,16 @@
 <option ng-repeat="result in optionscmpblty" value="{{result.name}}">{{result.name}}</option>
 </select>
 	  <br><br> 
-<label class="span1" >  Browser  </label> 
+
 
 <table class="table" id="th4" >
      
- 
+ <caption class="span1" >  Browser  </caption> 
   
  <tbody>
 <tr scope="row">        
-	<th style="width: 200px" scope="col" title="Browser Type" > Browser Type </th> 		
-	<th style="width: 200px" scope="col" title="Browser Version">  Browser Version  </th>	
+	<th style="width: 200px" scope="col" title="Browser Type"  > Browser Type </th> 		
+	<th style="width: 200px" scope="col" title="Browser Version" >  Browser Version  </th>	
 	  
   </tr>  <tr scope="row">
 <td  style="width: 180px" title="Internet Explorer"  ng-model="chkBoxValIE" >   
@@ -229,7 +233,7 @@
 
 </td>
 </tr>
-<tr>
+<tr scope="row">
 <td style="width: 180px" title="Safari" ng-model="chkBoxValSaf" > 
 <label for="safari" >Safari
     <input ng-checked="chkBoxValSaf" type="checkbox" ng-model="checkboxModel.value3" id="safari" title="Safari" ng-true-value="'Safari'" ng-false-value="''">
@@ -244,7 +248,7 @@
 </select>
 </td>
 </tr>
-<tr>
+<tr scope="row">
 <td style="width: 180px" title="Firefox"  ng-model="chkBoxValFrfx" > 
 <label for="firefoxTest" >Firefox
     <input ng-checked="chkBoxValFrfx" type="checkbox" ng-model="checkboxModel.value4"  id="firefoxTest" title="Firefox" ng-true-value="'Firefox'" ng-false-value="''">
@@ -259,7 +263,7 @@
 	  
 </td>
 </tr>
-<tr>
+<tr scope="row">
 <td style="width: 180px" title="Other Browser" ng-model="chkBoxValOthr"  > 
 <div class="show">
 <label for="otherBrowserIDTest"> Other Browser <input ng-checked= "chkBoxValOthrBrwsr1"  type="checkbox" id="otherBrowserIDTest" name="Other Browser"  title="Other Browser"  ng-model="otherBrowser" > </label>
@@ -354,7 +358,7 @@
 </caption>
 <thead>
  <tr>   
-     <th scope="col" title="Issue Number"><div style="width: 96px"> Issue Number </div> </th> 	 
+     <th scope="col" title="Issue Number" ><div style="width: 96px"> Issue Number </div> </th> 	 
 	<th scope="col" title="Test Name" > <div style="width: 83px">Test Name</div> </th>	
     <th scope="col" title="Test ID" > <div style="width: 31px !important" >Test ID </div> </th>    	
 	<th scope="col" title="Test Condition"><div style="width: 198px"> Test Condition </div></th>    
@@ -383,13 +387,13 @@
 
 <td > <div class="widetd3" id="testConditionID{{$index}}" title="Test Condition" >{{test.TestCondition}}</div> </td>
 <!-- <td style="width: 50px" title="Selected test result is {{default_SelectedResult[$index]}}" name="Test Result"> -->
-<td style="width: 50px"  name="Test Result"> 
+<td style="width: 50px"  name="Test Result">
  <span ng-if="menu1[$index] == 'menu1'" ng-keypress ="elemntClicked2([$index])">    
       <select  class="resultOptions"
       ng-model="selected_id_tstrslt$index"  
 	  ng-model="selected_name_tstgrp[$index]"  
       ng-options="o.id as o.name for o in optionsTstrslt1"  
-      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt1|filter:{id:selected_id_tstrslt$index})[0].name" id="{{$index}}"   onchange="elemntClicked2([$index])" title="Test Result for {{test.TestID}}">
+      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt1|filter:{id:selected_id_tstrslt$index})[0].name" id="{{$index}}"   onchange="elemntClicked2([$index])"  aria-label="Test Result for {{test.TestID}}"   title="Test Result for {{test.TestID}}">
 	  <option value="" selected disabled hidden>{{default_SelectedResult[$index]}}</option> </select> 	  
 </span>
 <span ng-if="menu1[$index] == 'menu2' " ng-keypress ="elemntClicked2([$index])" >    
@@ -397,7 +401,7 @@
       ng-model="selected_id_tstrslt$index" 
 	  ng-model="selected_name_tstgrp[$index]" 
       ng-options="o.id as o.name for o in optionsTstrslt" 
-      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt|filter:{id:selected_id_tstrslt$index})[0].name"  id="{{$index}}"  ng-click="elemntClicked2([$index])" title="Test Result for {{test.TestID}}">
+      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt|filter:{id:selected_id_tstrslt$index})[0].name"  id="{{$index}}"  ng-click="elemntClicked2([$index])"   title="Test Result for {{test.TestID}}">
 	  <option value="" selected disabled hidden>{{default_SelectedResult[$index]}}</option> </select> 	  
 </span>
 
@@ -406,12 +410,12 @@
       ng-model="selected_id_tstrslt$index" 
 	  ng-model="selected_name_tstgrp[$index]" 
       ng-options="o.id as o.name for o in optionsTstrslt2" 
-      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt2|filter:{id:selected_id_tstrslt$index})[0].name"  id="{{$index}}"  ng-click="elemntClicked2([$index])" title="Test Result for {{test.TestID}}" >
+      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt2|filter:{id:selected_id_tstrslt$index})[0].name"  id="{{$index}}"  ng-click="elemntClicked2([$index])"   title="Test Result for {{test.TestID}}" >
 	  <option value="" selected disabled hidden>{{default_SelectedResult[$index]}}</option> </select> 	  
 </span>
 
   <span ng-if="menu1[$index] == 'menu4' " ng-keypress ="elemntClicked2([$index])">    
-      <select class="resultOptions"  ng-model="selected_name_tstgrp[$index]" id="{{$index}}" ng-click="rsltSlctionClicked([$index]);" title="Test Result for {{test.TestID}}">
+      <select class="resultOptions"  ng-model="selected_name_tstgrp[$index]" id="{{$index}}" ng-click="rsltSlctionClicked([$index]);"  title="Test Result for {{test.TestID}}">
 	  <option value="" > Does Not Apply </option>
 	  <option ng-repeat="result in optionsTstrslt4" value="{{result.name}}">{{result.name}}</option>
 	  <option value="" selected disabled hidden>{{default_SelectedResult[$index]}}</option> </select>       	  
@@ -422,7 +426,7 @@
       ng-model="selected_id_tstrslt$index" 
 	  ng-model="selected_name_tstgrp[$index]" 
       ng-options="o.id as o.name for o in optionsTstrslt3" 
-      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt3|filter:{id:selected_id_tstrslt$index})[0].name"  id="{{$index}}" ng-click="elemntClicked2([$index])" title="Test Result for {{test.TestID}}">
+      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt3|filter:{id:selected_id_tstrslt$index})[0].name"  id="{{$index}}" ng-click="elemntClicked2([$index])"   title="Test Result for {{test.TestID}}">
 	  <option value="" selected disabled hidden>{{default_SelectedResult[$index]}}</option> </select> 	  
 </span>
 
@@ -431,7 +435,7 @@
       ng-model="selected_id_tstrslt$index" 
 	  ng-model="selected_name_tstgrp[$index]" 
       ng-options="o.id as o.name for o in optionsTstrslt5" 
-      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt5|filter:{id:selected_id_tstrslt$index})[0].name"  id="{{$index}}" ng-click="elemntClicked2([$index])" title="Test Result for {{test.TestID}}">
+      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt5|filter:{id:selected_id_tstrslt$index})[0].name"  id="{{$index}}" ng-click="elemntClicked2([$index])"   title="Test Result for {{test.TestID}}">
 	  <option value="" selected disabled hidden>{{default_SelectedResult[$index]}}</option> </select> 	  
 </span>
 
@@ -440,7 +444,7 @@
       ng-model="selected_id_tstrslt$index" 
 	  ng-model="selected_name_tstgrp[$index]" 
       ng-options="o.id as o.name for o in optionsTstrslt6" 
-      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt6|filter:{id:selected_id_tstrslt$index})[0].name"  id="{{$index}}" ng-click="elemntClicked2([$index])" title="Test Result for {{test.TestID}}">
+      ng-change="selected_name_tstgrp[$index]=(optionsTstrslt6|filter:{id:selected_id_tstrslt$index})[0].name"  id="{{$index}}" ng-click="elemntClicked2([$index])"    title="Test Result for {{test.TestID}}">
 	  <option value="" selected disabled hidden>{{default_SelectedResult[$index]}}</option> </select> 	  
 </span>
   

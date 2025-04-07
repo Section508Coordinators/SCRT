@@ -50,8 +50,7 @@
 	  </ol>
 	</p>
          <span id='selectFileHd' ng-hide = "fileInput1" >
-        <label for="fileinput"> <strong> Select test results JSON file </strong>
-        </label><br>	
+        <h2> Select test results JSON file </h2>
 		<input type='file' class="input" id='fileinput' name='Browse to file' title="Please select valid file" onchange="angular.element(this).scope().fileNameChanged(this)" accept=".json"> <!--ng-click ="fileInput();" -->
         </span>
 		<br><br>
@@ -273,7 +272,7 @@
 			<tbody ng-repeat="record in jsonData">
              <tr ng-repeat="test in record.Criteria " ng-if="filterResult1"> 
 			<!--<tr ng-repeat="test in record.Criteria " ng-if="noResult[$index]" ng-show="TestResult[$index]== filterResult">-->
-			 <th  title="Issue Number">
+			 <th  scope="row" title="Issue Number">
                 <div style="width: 80px"> Issue {{$index}} </div>
               </th>              
               <th  scope="row" title="Test Name" id="tnm1[$index]">
@@ -347,7 +346,7 @@
               </td>
 							
               <td title="Selected Test Result for {{TestID[$index]}}" id="tstrslt1[$index]">
-                <div style="width: 69px"> {{TestResult[$index]}} </div>
+                <div style="width: 69px">{{TestResult[$index]}} </div>
               </td>
               <td title="Selected Browser Types" id="brsr1[$index]">
                 <div style="width: 129px"> {{T_brwsrType[$index]}} </br> {{T_brwsrVrsn[$index]}}</div>
