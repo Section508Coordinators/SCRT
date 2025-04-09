@@ -125,7 +125,7 @@
 <div class="content">
 
  <div class="divSpace" id="testersInfo" >
- <label for="CompanyName" class="required"> Company name (Required<span ng-if="acrtInputForm.CompanyName.$valid" >, 50 chars max</span>): </label> <br><input type="string" ng-model="CompanyName" placeholder ="First Name, 50 chars max" class= "betnTags" id="CompanyName" name="Tester's CompanyName" title="50 Chars max" ng-maxlength="50"  size="50" limit-to="50">  
+ <label for="companyname" class="required"> Company name (Required<span ng-if="acrtInputForm.CompanyName.$valid" >, 50 chars max</span>): </label> <br><input type="string" ng-model="companyname" placeholder ="Company Name, 50 chars max" class= "betnTags" id="companyname" name="Tester's CompanyName" title="50 Chars max" ng-maxlength="50"  size="50" limit-to="50">  
  
  
   <br><label for="firstname" class="required"> Tester's First Name (Required<span ng-if="acrtInputForm.TesterFirstName.$valid" >, 50 chars max</span>): </label> <br><input type="string" ng-model="firstname" placeholder ="First Name, 50 chars max" class= "betnTags" id="firstname" name="TesterFirstName" title="50 Chars max" ng-maxlength="50"  size="50" limit-to="50">    
@@ -383,9 +383,9 @@
  <!-- <div ng-if='edit' style="width: 97px"  title="Issue Number" >Issue {{counterCollection[$index]}} </div>  -->
 </th>
 <th   scope="row" title="Test Name" ><div class="widetd1">{{test.TestName}}</div></th> 
-<td ><div class="widetd2"  id="testID{{$index}}" title="Test ID"> {{test.TestID}} </div> </td>
+<td ><div class="widetext2"  id="testID{{$index}}" title="Test ID"> {{test.TestID}} </div> </td>
 
-<td > <div class="widetd3" id="testConditionID{{$index}}" title="Test Condition" >{{test.TestCondition}}</div> </td>
+<td > <div class="widetext3" id="testConditionID{{$index}}" title="Test Condition" >{{test.TestCondition}}</div> </td>
 <!-- <td style="width: 50px" title="Selected test result is {{default_SelectedResult[$index]}}" name="Test Result"> -->
 <td style="width: 50px"  name="Test Result">
  <span ng-if="menu1[$index] == 'menu1'" ng-keypress ="elemntClicked2([$index])">    
@@ -561,10 +561,10 @@
 </div>
 </div>
 </td>
- <td > <div class="widetd3"> <textarea  rows="4" cols="25" type="text" ng-model="testerCommentID[$index]" class="txtarea" placeholder="comments,1000 chars max" ng-maxlength="1000" title="Tester's Comment, 1000 chars max" limit-to="1000"> </textarea> </div> </td>
-<td > <div class="widetd3"> <textarea  rows="4" cols="25" type="text" ng-model="location[$index]" class="txtarea" placeholder="location, 1000 chars max" title="Location/Screen, 1000 chars max" ng-maxlength="1000" limit-to="1000"> </textarea> </div> </td>
+ <td > <div class="widetext3"> <textarea  rows="4" cols="25" type="text" ng-model="testerCommentID[$index]" class="txtarea" placeholder="comments,1000 chars max" ng-maxlength="1000" title="Tester's Comment, 1000 chars max" limit-to="1000"> </textarea> </div> </td>
+<td > <div class="widetext3"> <textarea  rows="4" cols="25" type="text" ng-model="location[$index]" class="txtarea" placeholder="location, 1000 chars max" title="Location/Screen, 1000 chars max" ng-maxlength="1000" limit-to="1000"> </textarea> </div> </td>
 
-<td >  <div class="widetd8">
+<td >  <div class="widetext8">
 
 <br>
     <input
@@ -611,7 +611,7 @@
 <textarea rows="4" cols="50"  id= "{{ 'selectorrr111' + $index }}"  placeholder="Remediation Details, 1000 chars max" type="text" ng-model="rmdatnDtlID[$index]" class="txtarea" title="Remediation Details, 1000 chars max" ng-maxlength="1000" limit-to="1000"> </textarea>
 </div>
 </td>
-<td ng-show="selected_name_rmdtn" >  <div class="widetd8">
+<td ng-show="selected_name_rmdtn" >  <div class="widetext8">
 
 <br> <input  ng-if="browseImageOption[$index]" type="file"  ng-model='imgCnvrsn2[$index]'  class='addChild' title="Browse to screenshot images" onchange="angular.element(this).scope().uploadImage2(this)" accept=".jpg,.jpeg,.icon,.png,.svg,.gif" /> <br> 
     <img   id="image1{{$index}}" ng-if="imageCapturedStored2[$index]" ng-src = {{test.ImageSrc2}}  alt="" title="Browse to screenshot images" class="large-image" width="50" height="50" ng-click="zoom([$index])" onerror="this.style.display='none';">      
@@ -632,7 +632,7 @@
  <td>
  
 </br> 
-<div class="widetd7"  > 
+<div class="widetext7"  > 
   <button ng-if="test.ChildIssue != 'Yes'"  id="{{ 'PI'+indexCollection[$index] }}" class='addChild' type="button" title="Add child for {{test.TestID}}" ng-click="addIssue($index)">Add Child Issue {{test.TestID}}</button>
   <button ng-if="test.ChildIssue == 'Yes'"  id="{{ 'PI'+indexCollection[$index] }}" class='addChild' type="button" title="Remove child issue" ng-click="RemoveChildIssue($index)">Remove Child Issue {{test.TestID}}</button> 
 </div>
