@@ -48,7 +48,7 @@
 		<li>Trusted Testers should coordinate with their IT Project Manager regarding remediation details.</li>
 	  </ol>
 	</p>
-	<h2> Select template or test results JSON file </h2>
+	<strong> Select template or test results JSON file </strong> <br> <br>
 	<span id='selectFileHd' ng-hide = "fileInput1" >
 		
 
@@ -174,22 +174,24 @@
 	  <br><br> 
 
 
+
 <table class="table" id="th4" >
      
  <caption class="span1" >  Browser  </caption> 
   
  <tbody>
-<tr scope="row">        
+<tr >        
 	<th style="width: 200px" scope="col" title="Browser Type"  > Browser Type </th> 		
 	<th style="width: 200px" scope="col" title="Browser Version" >  Browser Version  </th>	
 	  
-  </tr>  <tr scope="row">
-<td  style="width: 180px" title="Internet Explorer"  ng-model="chkBoxValIE" >   
+  </tr>  
+ <tr >
+<th scope="row"  style="width: 180px" title="Internet Explorer"  ng-model="chkBoxValIE" >   
   
 <label for="ie" class='notbold'>Internet Explorer 
     <input ng-checked="chkBoxValIE" type="checkbox"  ng-model="checkboxModel.value1"  id="ie" ng-true-value="'Internet Explorer'" ng-false-value="''">
   </label> 
-</td>
+</th>
 <td style="width: 200px" title="Internet Explorer {{default_ieVersn}}"> 
 <label for="ieeVersnIDTest">  Version: </label> 	 
 
@@ -201,13 +203,13 @@
 
 </td>
 </tr>
-<tr scope="row">
-<td  style="width: 180px" name="Edge Type" title="Edge" ng-model="chkBoxValEdg" > 
+<tr>
+<th scope="row"  style="width: 180px" name="Edge Type" title="Edge" ng-model="chkBoxValEdg" > 
 
 <label for="ed" > Edge
 	   <input ng-checked="chkBoxValEdg" type="checkbox" ng-model="checkboxModel.value5"  id="ed"  ng-true-value="'Edge'" ng-false-value="''"> 
   </label> 
-</td>
+</th>
 <td style="width: 200px" > 
 <label for="edVersnIDTest">  Version: </label> 
 	
@@ -218,12 +220,12 @@
 
 </td>
 </tr>
-<tr scope="row">
-<td  style="width: 180px" title="Chrome" ng-model="chkBoxValChrm"> 
+<tr>
+<th scope="row"  style="width: 180px" title="Chrome" ng-model="chkBoxValChrm"> 
 <label for="chrome" >Chrome
     <input ng-checked="chkBoxValChrm" type="checkbox" ng-model="checkboxModel.value2" id="chrome" title="Chrome" ng-true-value="'Chrome'" ng-false-value="''">
    </label>
-</td>
+</th>
 <td style="width: 200px" title="chrome {{default_chrVersn}}"> 
 <label for="chVersnIDTest">  Version: </label> 	
  <select name="chrome Versn" title="chrome {{default_chrVersn}}" ng-model="selected_name_chVersn" id="chVersnIDTest" ng-click="tstChromeClicked()">
@@ -233,12 +235,12 @@
 
 </td>
 </tr>
-<tr scope="row">
-<td style="width: 180px" title="Safari" ng-model="chkBoxValSaf" > 
+<tr>
+<th scope="row" style="width: 180px" title="Safari" ng-model="chkBoxValSaf" > 
 <label for="safari" >Safari
     <input ng-checked="chkBoxValSaf" type="checkbox" ng-model="checkboxModel.value3" id="safari" title="Safari" ng-true-value="'Safari'" ng-false-value="''">
    </label for="" > 
-</td>
+</th>
 <td style="width: 200px" title= "Safari {{default_sfVersn}}"> 
 <label for="sfVersnIDTest">  Version: </label> 
 	
@@ -248,12 +250,12 @@
 </select>
 </td>
 </tr>
-<tr scope="row">
-<td style="width: 180px" title="Firefox"  ng-model="chkBoxValFrfx" > 
+<tr>
+<th scope="row" style="width: 180px" title="Firefox"  ng-model="chkBoxValFrfx" > 
 <label for="firefoxTest" >Firefox
     <input ng-checked="chkBoxValFrfx" type="checkbox" ng-model="checkboxModel.value4"  id="firefoxTest" title="Firefox" ng-true-value="'Firefox'" ng-false-value="''">
    </label >
-</td>
+</th>
 <td style="width: 200px" title="Firefox {{default_frfxVersn}}"> 
 <label for="fxVersnIDTest">  Version: </label> 	
 	  <select title="Firefox {{default_frfxVersn}}" ng-model="selected_name_fxVersn" id="fxVersnIDTest"   ng-click="tstFirefoxClicked()">
@@ -263,12 +265,13 @@
 	  
 </td>
 </tr>
-<tr scope="row">
-<td style="width: 180px" title="Other Browser" ng-model="chkBoxValOthr"  > 
+<tr >
+<th scope="row" style="width: 180px" title="Other Browser" ng-model="chkBoxValOthr"  > 
 <div class="show">
 <label for="otherBrowserIDTest"> Other Browser <input ng-checked= "chkBoxValOthrBrwsr1"  type="checkbox" id="otherBrowserIDTest" name="Other Browser"  title="Other Browser"  ng-model="otherBrowser" > </label>
     	
 </span>
+</th>
 <TD>
 <label for="entOthrBrsrID"><span class="show" ng-show="otherBrowser"> Type: <input type="string" ng-model="entOthrBrsrID" class= "betnTags" id="entOthrBrsrID" placeholder="Type, 50 Max chars." name="Other Browser type" ng-maxlength="50" title="Type, 50 Max chars." limit-to="50" > </label> <br>	
 <label for="entOthrBrsrIDVrsn"><span class="show" ng-show="otherBrowser"> Version: <input type="string" ng-model="entOthrBrsrIDVrsn" class= "betnTags" placeholder="Version, 50 Max chars." id="entOthrBrsrIDVrsn" name="Other Browser version" ng-maxlength="50" limit-to="50" title="Version, 50 Max chars."> </label> 	

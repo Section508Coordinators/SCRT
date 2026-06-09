@@ -38,7 +38,7 @@
         <!-- View test report. <a title="View Report instructions" href="./Help_Report.html" target="_blank" id="tstinstrID"> "View Report" instructions </a> -->
         
 		<p > 
-	  <strong >Tool Tips: </strong><br>
+	  <strong>Tool Tips: </strong><br>
 	  <ol >	     
 		<li>Use 'Skip to main content' link or keyboard shortcut Alt+M to go to main content.</li>
 		<li>This is a read-only page. To create or edit results, select “Create Report.” </li> 
@@ -50,7 +50,7 @@
 	  </ol>
 	</p>
          <span id='selectFileHd' ng-hide = "fileInput1" >
-        <h2> Select test results JSON file </h2>
+        <strong> Select test results JSON file </strong> <br><br>
 		<input type='file' class="input" id='fileinput' name='Browse to file' title="Please select valid file" onchange="angular.element(this).scope().fileNameChanged(this)" accept=".json"> <!--ng-click ="fileInput();" -->
         </span>
 		<br><br>
@@ -272,7 +272,7 @@
 			<tbody ng-repeat="record in jsonData">
              <tr ng-repeat="test in record.Criteria " ng-if="filterResult1"> 
 			<!--<tr ng-repeat="test in record.Criteria " ng-if="noResult[$index]" ng-show="TestResult[$index]== filterResult">-->
-			 <th  scope="row" title="Issue Number">
+			 <th  title="Issue Number">
                 <div style="width: 80px"> Issue {{$index}} </div>
               </th>              
               <th  scope="row" title="Test Name" id="tnm1[$index]">
