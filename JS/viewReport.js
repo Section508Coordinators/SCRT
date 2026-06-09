@@ -907,13 +907,13 @@ document.getElementById("dsblGrpBtn").click();
 	  "<h2> Disability Impact Score </h2>" +$scope.impctInfoMsg+"<br><br> <strong>Risk Score: "+$scope.TotalImpactedGroupNo+"</strong><br>"+ RSCSCORE + "<br><br>";
 
       // Check if selected_section508_pm_score is a number and not an empty string
-      if ($scope.selected_section508_pm_score && !isNaN($scope.selected_section508_pm_score)) {
+      if ($scope.selected_section508_pm_score && !isNaN($scope.selected_section508_pm_score)) 
 		  $scope.capturedFormData += "<strong>Section 508 PM Score: </strong>" + $scope.selected_section508_pm_score + "<br /><br />";
-      }
-	   if ($scope.usabilityID !='undefined' || $scope.usabilityID != undefined ) {
+      
+	   if ($scope.usabilityID =='undefined' || $scope.usabilityID == undefined ) 
 		   $scope.usabilityID ='Not Provided';
          $scope.capturedFormData += "<strong>Summary of the usability issues: </strong>" + $scope.usabilityID + "<br /><br />";
-      }
+      
       
       $scope.capturedFormData +=
       "<b>Your feedback is important to us! Please take the <a title=\"SCRT Survey\" href= \"https://www.surveymonkey.com/r/DHSACRT\" target=\"_blank\"   id=\"surveyID\"> SCRT Survey </a> </b>"+
