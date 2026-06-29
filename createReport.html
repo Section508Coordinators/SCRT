@@ -36,7 +36,7 @@
   or <a title="SCRT Bitbucket Repository" href= "https://maestro.dhs.gov/stash/projects/APPDEV/repos/acrt/browse/acrt" target="_blank"   id="bitbucketSrc">BitBucket </a>  &nbsp;(DHS users) before completing the form. <br><br> -->
   Refer to the <a title="SCRT User Guide" href="./Resources/ACRTTrainingManual.pdf" target="_blank"  id="helpID" style="display:inline-block; color:blue;">SCRT User Guide </a> &nbsp;for complete instructions.
    <p > <!--  id="instr" -->
-	  <strong>Tool Tips:</strong> <br>
+	  <h2>Tool Tips:</h2>
 	  <ol>	
         <li>Use 'Skip to main content' link or keyboard shortcut Alt+M to go to main content.</li>		  
 	    <li>To Create a new Report, Load a JSON Trusted Tester v.5.1.3 (for web) or Trusted Tester v.4 (for software)  (TT5.1.1 or TT4) Success Criteria template.</li>	
@@ -48,7 +48,7 @@
 		<li>Trusted Testers should coordinate with their IT Project Manager regarding remediation details.</li>
 	  </ol>
 	</p>
-	<strong> Select template or test results JSON file </strong> <br> <br>
+	<h2> Select template or test results JSON file </h2>
 	<span id='selectFileHd' ng-hide = "fileInput1" >
 		
 
@@ -291,7 +291,7 @@
     
    
   <div  class="right-div"> 
-   <label class="span1" >  Operating System</label>  </br></br>
+   <h3>  Operating System</h3>  </br></br>
  <label for="window" ng-model="chkBoxValWin" >Windows OS:
     <input ng-checked="chkBoxValWin"  type="checkbox" title="window OS" ng-model="checkboxModel.value6"  id="window" ng-true-value="'Window OS'" ng-false-value="''">
   </label>
@@ -347,7 +347,7 @@
 <option ng-repeat="result in optionsglbl" value="{{result.name}}">{{result.name}}</option>
 </select> &nbsp; &nbsp;   </div> -->
  
-<h2> Test Results Form </h2> 
+<h3> Test Results Form </h3> 
  <label for="alerts" name="chkUnchk" id="chkUnchk"><strong>Disable</strong> Add Child Issue/Remove Child Issue Alerts within the Test Results form. </label> 
  <input type="checkbox" id="alerts" title="Disable Add Child Issue/Remove Child Issue Alerts within the Test Results form." ng-model="checkboxModel.alerts"  ng-init="checkboxModel.alerts='on'"   ng-true-value="'off'" ng-false-value="'on'"> 
  <br><br>
