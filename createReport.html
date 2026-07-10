@@ -353,11 +353,13 @@
  <br><br>
  <input type="checkbox" name="Remediation Details" ng-model="selected_name_rmdtn"   title="Remediation details, Check user manual section 5.1 for details."  id="rmdtlnd" ng-change="remediationDetails()"   ng-true-value="'Yes'" ng-false-value="'No'"> 
  <label for="rmdtlnd" ><strong>Show Remediation Detail Columns </strong></label> 
-<div id="rmdTbleDiv">	  
- 
+<div id="rmdTbleDiv"> <br>	  
+<strong> NOTE:  This table contains relevant options for individual TestIDs. The report will be marked as a DRAFT until all tests have been scored.  Ensure all required fields are completed.</strong>
 <table style="height: 1000px;" id="rmdTble" >
-<caption id="tableCaption"> Report will be marked as Draft until results are entered for each test 
+<caption id="tableCaption"> 
+<!-- Report will be marked as Draft until results are entered for each test -->
 <span class="visuallyhidden"> This table has information tester's need to select test results. Make sure to select or fill all required fields </span>
+
 </caption>
 <thead>
  <tr>   
