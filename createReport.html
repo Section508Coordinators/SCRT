@@ -36,7 +36,7 @@
   or <a title="SCRT Bitbucket Repository" href= "https://maestro.dhs.gov/stash/projects/APPDEV/repos/acrt/browse/acrt" target="_blank"   id="bitbucketSrc">BitBucket </a>  &nbsp;(DHS users) before completing the form. <br><br> -->
   Refer to the <a title="SCRT User Guide" href="./Resources/ACRTTrainingManual.pdf" target="_blank"  id="helpID" style="display:inline-block; color:blue;">SCRT User Guide </a> &nbsp;for complete instructions.
    <p > <!--  id="instr" -->
-	  <strong>Tool Tips:</strong> <br>
+	  <h2>Tool Tips:</h2>
 	  <ol>	
         <li>Use 'Skip to main content' link or keyboard shortcut Alt+M to go to main content.</li>		  
 	    <li>To Create a new Report, Load a JSON Trusted Tester v.5.1.3 (for web) or Trusted Tester v.4 (for software)  (TT5.1.1 or TT4) Success Criteria template.</li>	
@@ -174,22 +174,24 @@
 	  <br><br> 
 
 
+
 <table class="table" id="th4" >
      
  <caption class="span1" >  Browser  </caption> 
   
  <tbody>
-<tr scope="row">        
+<tr >        
 	<th style="width: 200px" scope="col" title="Browser Type"  > Browser Type </th> 		
 	<th style="width: 200px" scope="col" title="Browser Version" >  Browser Version  </th>	
 	  
-  </tr>  <tr scope="row">
-<td  style="width: 180px" title="Internet Explorer"  ng-model="chkBoxValIE" >   
+  </tr>  
+ <tr >
+<th scope="row"  style="width: 180px" title="Internet Explorer"  ng-model="chkBoxValIE" >   
   
 <label for="ie" class='notbold'>Internet Explorer 
     <input ng-checked="chkBoxValIE" type="checkbox"  ng-model="checkboxModel.value1"  id="ie" ng-true-value="'Internet Explorer'" ng-false-value="''">
   </label> 
-</td>
+</th>
 <td style="width: 200px" title="Internet Explorer {{default_ieVersn}}"> 
 <label for="ieeVersnIDTest">  Version: </label> 	 
 
@@ -201,13 +203,13 @@
 
 </td>
 </tr>
-<tr scope="row">
-<td  style="width: 180px" name="Edge Type" title="Edge" ng-model="chkBoxValEdg" > 
+<tr>
+<th scope="row"  style="width: 180px" name="Edge Type" title="Edge" ng-model="chkBoxValEdg" > 
 
 <label for="ed" > Edge
 	   <input ng-checked="chkBoxValEdg" type="checkbox" ng-model="checkboxModel.value5"  id="ed"  ng-true-value="'Edge'" ng-false-value="''"> 
   </label> 
-</td>
+</th>
 <td style="width: 200px" > 
 <label for="edVersnIDTest">  Version: </label> 
 	
@@ -218,12 +220,12 @@
 
 </td>
 </tr>
-<tr scope="row">
-<td  style="width: 180px" title="Chrome" ng-model="chkBoxValChrm"> 
+<tr>
+<th scope="row"  style="width: 180px" title="Chrome" ng-model="chkBoxValChrm"> 
 <label for="chrome" >Chrome
     <input ng-checked="chkBoxValChrm" type="checkbox" ng-model="checkboxModel.value2" id="chrome" title="Chrome" ng-true-value="'Chrome'" ng-false-value="''">
    </label>
-</td>
+</th>
 <td style="width: 200px" title="chrome {{default_chrVersn}}"> 
 <label for="chVersnIDTest">  Version: </label> 	
  <select name="chrome Versn" title="chrome {{default_chrVersn}}" ng-model="selected_name_chVersn" id="chVersnIDTest" ng-click="tstChromeClicked()">
@@ -233,12 +235,12 @@
 
 </td>
 </tr>
-<tr scope="row">
-<td style="width: 180px" title="Safari" ng-model="chkBoxValSaf" > 
+<tr>
+<th scope="row" style="width: 180px" title="Safari" ng-model="chkBoxValSaf" > 
 <label for="safari" >Safari
     <input ng-checked="chkBoxValSaf" type="checkbox" ng-model="checkboxModel.value3" id="safari" title="Safari" ng-true-value="'Safari'" ng-false-value="''">
    </label for="" > 
-</td>
+</th>
 <td style="width: 200px" title= "Safari {{default_sfVersn}}"> 
 <label for="sfVersnIDTest">  Version: </label> 
 	
@@ -248,12 +250,12 @@
 </select>
 </td>
 </tr>
-<tr scope="row">
-<td style="width: 180px" title="Firefox"  ng-model="chkBoxValFrfx" > 
+<tr>
+<th scope="row" style="width: 180px" title="Firefox"  ng-model="chkBoxValFrfx" > 
 <label for="firefoxTest" >Firefox
     <input ng-checked="chkBoxValFrfx" type="checkbox" ng-model="checkboxModel.value4"  id="firefoxTest" title="Firefox" ng-true-value="'Firefox'" ng-false-value="''">
    </label >
-</td>
+</th>
 <td style="width: 200px" title="Firefox {{default_frfxVersn}}"> 
 <label for="fxVersnIDTest">  Version: </label> 	
 	  <select title="Firefox {{default_frfxVersn}}" ng-model="selected_name_fxVersn" id="fxVersnIDTest"   ng-click="tstFirefoxClicked()">
@@ -263,12 +265,13 @@
 	  
 </td>
 </tr>
-<tr scope="row">
-<td style="width: 180px" title="Other Browser" ng-model="chkBoxValOthr"  > 
+<tr >
+<th scope="row" style="width: 180px" title="Other Browser" ng-model="chkBoxValOthr"  > 
 <div class="show">
 <label for="otherBrowserIDTest"> Other Browser <input ng-checked= "chkBoxValOthrBrwsr1"  type="checkbox" id="otherBrowserIDTest" name="Other Browser"  title="Other Browser"  ng-model="otherBrowser" > </label>
     	
 </span>
+</th>
 <TD>
 <label for="entOthrBrsrID"><span class="show" ng-show="otherBrowser"> Type: <input type="string" ng-model="entOthrBrsrID" class= "betnTags" id="entOthrBrsrID" placeholder="Type, 50 Max chars." name="Other Browser type" ng-maxlength="50" title="Type, 50 Max chars." limit-to="50" > </label> <br>	
 <label for="entOthrBrsrIDVrsn"><span class="show" ng-show="otherBrowser"> Version: <input type="string" ng-model="entOthrBrsrIDVrsn" class= "betnTags" placeholder="Version, 50 Max chars." id="entOthrBrsrIDVrsn" name="Other Browser version" ng-maxlength="50" limit-to="50" title="Version, 50 Max chars."> </label> 	
@@ -288,7 +291,7 @@
     
    
   <div  class="right-div"> 
-   <label class="span1" >  Operating System</label>  </br></br>
+   <h3>  Operating System</h3>  </br></br>
  <label for="window" ng-model="chkBoxValWin" >Windows OS:
     <input ng-checked="chkBoxValWin"  type="checkbox" title="window OS" ng-model="checkboxModel.value6"  id="window" ng-true-value="'Window OS'" ng-false-value="''">
   </label>
@@ -344,17 +347,19 @@
 <option ng-repeat="result in optionsglbl" value="{{result.name}}">{{result.name}}</option>
 </select> &nbsp; &nbsp;   </div> -->
  
-<h2> Test Results Form </h2> 
+<h3> Test Results Form </h3> 
  <label for="alerts" name="chkUnchk" id="chkUnchk"><strong>Disable</strong> Add Child Issue/Remove Child Issue Alerts within the Test Results form. </label> 
  <input type="checkbox" id="alerts" title="Disable Add Child Issue/Remove Child Issue Alerts within the Test Results form." ng-model="checkboxModel.alerts"  ng-init="checkboxModel.alerts='on'"   ng-true-value="'off'" ng-false-value="'on'"> 
  <br><br>
  <input type="checkbox" name="Remediation Details" ng-model="selected_name_rmdtn"   title="Remediation details, Check user manual section 5.1 for details."  id="rmdtlnd" ng-change="remediationDetails()"   ng-true-value="'Yes'" ng-false-value="'No'"> 
  <label for="rmdtlnd" ><strong>Show Remediation Detail Columns </strong></label> 
-<div id="rmdTbleDiv">	  
- 
+<div id="rmdTbleDiv"> <br>	  
+<strong> NOTE:  This table contains relevant options for individual TestIDs. The report will be marked as a DRAFT until all tests have been scored.  Ensure all required fields are completed.</strong>
 <table style="height: 1000px;" id="rmdTble" >
-<caption id="tableCaption"> Report will be marked as Draft until results are entered for each test 
+<caption id="tableCaption"> 
+<!-- Report will be marked as Draft until results are entered for each test -->
 <span class="visuallyhidden"> This table has information tester's need to select test results. Make sure to select or fill all required fields </span>
+
 </caption>
 <thead>
  <tr>   
