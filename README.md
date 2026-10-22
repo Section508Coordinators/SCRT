@@ -1,4 +1,4 @@
-# SCRT 5.0.1
+# SCRT 5.2.0
 # Project Title
 **Section 508 Compliance Reporting Tool (SCRT)** 
 
