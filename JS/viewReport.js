@@ -324,17 +324,17 @@ span2.onclick = function() {
  var input, file, fr;
 
     if (typeof window.FileReader !== 'function') {
-      alert("Please use file browser which supports file API.");
+      alert("Please use a file browser that supports the File API.");
       return;
     }
 
     input = document.getElementById('fileinput');
     if (!input) {
-      alert("Make sure you have file input element.");
+      alert("Please ensure a file input element is available.");
     } else if (!input.files) {
-      alert("Please use browser that supports the `files` property of file inputs.");
+      alert("Please use browser that supports the `files` property for file input elements.");
     } else if (!input.files[0]) {
-      alert("Please select a JSON file first");
+      alert("Please select a JSON file before continuing.");
     } else {
       file = input.files[0];
       fr = new FileReader();
@@ -403,7 +403,7 @@ $scope.countOfRepWords =  function wordFreq(string) {
       $scope.flashID = $scope.jsonData[0].Product.P_Flash;
       $scope.javaID = $scope.jsonData[0].Product.P_java;
       $scope.prodDescID = $scope.jsonData[0].Product.P_Desc;
-      $scope.prdNteDescID = $scope.jsonData[0].Product.P_Notes;
+      $scope.prdNteDescID = $scope.jsonData[0].Product.P_Notes.replace(/\\n/g, "\n");
       $scope.compID = $scope.jsonData[0].System.S_Compatibility;
       $scope.myBrowserTested = $scope.jsonData[0].System.S_selectedBrowser;
       $scope.myBrowser = $scope.jsonData[0].System.S_selectedBrowserVersions;
@@ -415,7 +415,7 @@ $scope.countOfRepWords =  function wordFreq(string) {
 	  $scope.companyname = $scope.jsonData[0].Tester.T_companyname;
       $scope.myRole = $scope.jsonData[0].Tester.T_Role;
       $scope.testerContact = $scope.jsonData[0].Tester.T_cntc;
-      $scope.testScope = $scope.jsonData[0].Tester.T_scope;
+      $scope.testScope = $scope.jsonData[0].Tester.T_scope.replace(/\\n/g, "\n");
       $scope.evalMethod = $scope.jsonData[0].Tester.T_eval;
       $scope.evalMethodVrsn = $scope.jsonData[0].Tester.T_evalMthd_Vrsn;
       $scope.dateSubmitted = $scope.jsonData[0].Tester.T_Date;
@@ -429,7 +429,7 @@ $scope.countOfRepWords =  function wordFreq(string) {
 
       $scope.titforImg =[];
 	  $scope.altforImg = [];
-	        
+	  	        
       for (let b = 0; b < $scope.jsonData[0].Criteria.length; b++) {	
        	$scope.noResult[b] = true;         
 		let c=b+1;
@@ -445,7 +445,7 @@ $scope.countOfRepWords =  function wordFreq(string) {
 		if($scope.TestResult[b]== 'undefined') {$scope.TestResult[b] = ''; $scope.noResult[b]=false; };		
         $scope.IssueNo[b] = b;//$scope.jsonData[0].Criteria[b].IssueNo;
 		$scope.location[b] = $scope.jsonData[0].Criteria[b].location;
-        $scope.TesterComment[b] = $scope.jsonData[0].Criteria[b].TesterComment;
+        $scope.TesterComment[b] = $scope.jsonData[0].Criteria[b].TesterComment.replace(/\\n/g, "\n");
         $scope.T_brwsrType[b] = $scope.jsonData[0].Criteria[b].T_brwsrType;
         $scope.T_brwsrVrsn[b] = $scope.jsonData[0].Criteria[b].T_brwsrVrsn;
         $scope.ImageSrc[b] = $scope.jsonData[0].Criteria[b].ImageSrc;
@@ -456,7 +456,7 @@ $scope.countOfRepWords =  function wordFreq(string) {
 	   }
         $scope.GlobalIssue[b] = $scope.jsonData[0].Criteria[b].GlobalIssue;
         $scope.RemediationDate[b] = $scope.jsonData[0].Criteria[b].RemediationDate;
-        $scope.RemediationDetails[b] = $scope.jsonData[0].Criteria[b].RemediationDetails;
+        $scope.RemediationDetails[b] = $scope.jsonData[0].Criteria[b].RemediationDetails.replace(/\\n/g, "\n");
 		$scope.ImageSrc2[b] = $scope.jsonData[0].Criteria[b].ImageSrc2;
         $scope.Counter[b] = $scope.jsonData[0].Criteria[b].Counter;		
         $scope.CrtIDCollection.push($scope.CrtID[b]);	
@@ -482,15 +482,16 @@ document.getElementById("dsblGrpBtn").click();
       }
       $scope.impactedGroup = [];
        document.getElementById("msg1").innerHTML = "<strong>"+$scope.evalMethod +" Version "+$scope.evalMethodVrsn + " "+$scope.productID+$scope.ownerID+".json"+ "</strong> file load completed.<br> To load a different file, <strong>reload</strong> this page.";		  
-        alert('To save printer-friendly HTML report, use Alt+S or Save button at the bottom of the page.');
+        alert('To save the printer-friendly HTML report, press Alt+S or select the Save button at the bottom of the page.');
 	  
 	  //$scope.validData=true;
       if($scope.jsonData[0].SuccessCriteria == undefined){
 	 // $scope.validData = false;
-	  alert('Either select different file (by refreshing this page) or use "Create Report" option for same file.');
+	  alert('To select a different file, refresh this page. To use the same file, select the Create Report option.');
 	  }
 	  
 	  if($scope.jsonData[0].SuccessCriteria != undefined){
+	 
       $scope.sucCrtLngth =  $scope.jsonData[0].SuccessCriteria.length;	
 	  //alert($scope.sucCrtLngth);
      }
@@ -500,7 +501,7 @@ document.getElementById("dsblGrpBtn").click();
 	    
      if ($scope.sucCrtLngth == 0){
 	$scope.wcagRprt = false;
-     alert('Make sure to load file with all mandatory fields and at least one valid test result to view complete report page.');	 
+     alert('Please load a file that includes all required fields and at least one valid test result to view the complete report page.');	 
 	 }
 
     if ($scope.sucCrtLngth >0) {
@@ -511,12 +512,16 @@ document.getElementById("dsblGrpBtn").click();
 	}
 		
 	 for (let a = 0; a < $scope.sucCrtLngth; a++) {
+		 $scope.jsonData[0].SuccessCriteria[a].RemarkExplntn = $scope.jsonData[0].SuccessCriteria[a].RemarkExplntn.replace(/\\n/g, "\n");
+		// $scope.jsonData[0].SuccessCriteria[a].RemarkExplntn = '';
+		
 		  if ($scope.jsonData[0].SuccessCriteria[a].DisabilityImpact == undefined || $scope.jsonData[0].SuccessCriteria[a].DisabilityImpact == 'undefined') 
            $scope.jsonData[0].SuccessCriteria[a].DisabilityImpact = "";
        
           if ($scope.jsonData[0].SuccessCriteria[a].DisabilityImpact != "" || $scope.jsonData[0].SuccessCriteria[a].DisabilityImpact != " ") {
-            $scope.impactedGroup[a] = true;	{
-            if($scope.jsonData[0].SuccessCriteria[a].ConformanceLvl == 'Not Evaluated') continue;					
+            $scope.impactedGroup[a] = true;	{	            		
+            if($scope.jsonData[0].SuccessCriteria[a].ConformanceLvl == 'Not Evaluated') continue;			
+			
 			$scope.DisabilityImpactCollection.push($scope.jsonData[0].SuccessCriteria[a].DisabilityImpact);
 			//$scope.DisabilityImpactCollectionSC.push($scope.jsonData[0].SuccessCriteria[a].CrtID);
 			}
@@ -738,7 +743,7 @@ document.getElementById("dsblGrpBtn").click();
       WCAG += "<th scope=\"row\" width=\"100px\" title=\"Criteria\">" + $scope.jsonData[0].SuccessCriteria[i].CrtID; + "</th>";
       WCAG += "<td  width=\"220px\" title=\"Conformance Level\">" + $scope.jsonData[0].SuccessCriteria[i].ConformanceLvl; + "</td>";
 	  WCAG += "<td width=\"450px\" title=\"Guideline\">" + $scope.jsonData[0].SuccessCriteria[i].Guideline; + "</td>";
-      WCAG += "<td width=\"400px\" title=\"Remarks and Explanations\">" + $scope.jsonData[0].SuccessCriteria[i].RemarkExplntn; + "</td>";	
+      WCAG += "<td width=\"400px\" title=\"Remarks and Explanations\">" + $scope.jsonData[0].SuccessCriteria[i].RemarkExplntn.replace(/\\n/g, "\n"); + "</td>";	
      //WCAG += "<th scope=\"col\"  title=\"Impacted Group\" width=\"398px\">" + $scope.jsonData[0].SuccessCriteria[i].DisabilityImpact; + "</th>"; 	  
       WCAG += "</tr>";
     }
@@ -780,13 +785,13 @@ document.getElementById("dsblGrpBtn").click();
       testResult += "<td title=\"Success Criteria\">" + $scope.jsonData[0].Criteria[i].CrtID; + "</td>";
      // testResult += "<td title=\"Test\">" + $scope.jsonData[0].Criteria[i].Test; + "</td>";      
       testResult += "<td title=\"Test Result\">" + $scope.jsonData[0].Criteria[i].TestResult; + "</td>";
-	  testResult += "<td title=\"Tester's comment\">" + $scope.jsonData[0].Criteria[i].TesterComment; + "</td>";
+	  testResult += "<td title=\"Tester's comment\">" + $scope.jsonData[0].Criteria[i].TesterComment.replace(/\\n/g, "\n"); + "</td>";
 	  testResult += "<td title=\"Location\">" + $scope.jsonData[0].Criteria[i].location; + "</td>";      
       testResult += "<td title=\"Browser Type\">" + $scope.jsonData[0].Criteria[i].T_brwsrType; + "</td>";
       testResult += "<td title=\"Browser's Version\">" + $scope.jsonData[0].Criteria[i].T_brwsrVrsn; + "</td>";
       testResult += "<td onclick=\"zoom("+$scope.jsonData[0].Criteria[i].Counter+")\"   title=\"ScreenShot Captured\">" + "<img id=\""+$scope.jsonData[0].Criteria[i].Counter+"\" width=\"350\"  alt=\"screenshot captured\" src= \"" + $scope.ImageSrc[i] + '" '+"onerror=\"this.style.display='none'\"" + "\>" + "</td>";
       testResult += "<td title=\"Global Issue\">" + $scope.jsonData[0].Criteria[i].GlobalIssue; + "</td>";
-	  testResult += "<td title=\"Remediation Details\">" + $scope.jsonData[0].Criteria[i].RemediationDetails; + "</td>";
+	  testResult += "<td title=\"Remediation Details\">" + $scope.jsonData[0].Criteria[i].RemediationDetails.replace(/\\n/g, "\n"); + "</td>";
 	  testResult += "<td onclick=\"zoom("+$scope.jsonData[0].Criteria[i].Counter+")\"   title=\"ScreenShot Captured\">" + "<img id=\""+$scope.jsonData[0].Criteria[i].Counter+"\" width=\"350\"  alt=\"screenshot captured\" src= \"" + $scope.ImageSrc2[i] + '" '+"onerror=\"this.style.display='none'\"" + "\>" + "</td>";
       testResult += "<td title=\"Remediation Date\">" + $scope.jsonData[0].Criteria[i].RemediationDate; + "</td>";
       
@@ -803,13 +808,13 @@ document.getElementById("dsblGrpBtn").click();
       testResult += "<td title=\"Success Criteria\">" + $scope.jsonData[0].Criteria[i].CrtID; + "</td>";
      // testResult += "<td title=\"Test\">" + $scope.jsonData[0].Criteria[i].Test; + "</td>";      
       testResult += "<td title=\"Test Result\">" + $scope.jsonData[0].Criteria[i].TestResult; + "</td>";
-	  testResult += "<td title=\"Tester's comment\">" + $scope.jsonData[0].Criteria[i].TesterComment; + "</td>";
+	  testResult += "<td title=\"Tester's comment\">" + $scope.jsonData[0].Criteria[i].TesterComment.replace(/\\n/g, "\n"); + "</td>";
 	  testResult += "<td title=\"Location\">" + $scope.jsonData[0].Criteria[i].location; + "</td>";      
       testResult += "<td title=\"Browser Type\">" + $scope.jsonData[0].Criteria[i].T_brwsrType; + "</td>";
       testResult += "<td title=\"Browser's Version\">" + $scope.jsonData[0].Criteria[i].T_brwsrVrsn; + "</td>";
       testResult += "<td onclick=\"zoom("+$scope.jsonData[0].Criteria[i].Counter+")\"   title=\"ScreenShot Captured\">" + "<img id=\""+$scope.jsonData[0].Criteria[i].Counter+"\" width=\"350\"  alt=\"screenshot\" src= \"" + $scope.ImageSrc[i] + '" '+"onerror=\"this.style.display='none'\"" + "\>" + "</td>";
       testResult += "<td title=\"Global Issue\">" + $scope.jsonData[0].Criteria[i].GlobalIssue; + "</td>";
-	  testResult += "<td title=\"Remediation Details\">" + $scope.jsonData[0].Criteria[i].RemediationDetails; + "</td>";
+	  testResult += "<td title=\"Remediation Details\">" + $scope.jsonData[0].Criteria[i].RemediationDetails.replace(/\\n/g, "\n"); + "</td>";
 	  testResult += "<td onclick=\"zoom("+$scope.jsonData[0].Criteria[i].Counter+")\"   title=\"ScreenShot Captured\">" + "<img id=\""+$scope.jsonData[0].Criteria[i].Counter+"\" width=\"350\"  alt=\"screenshot\" src= \"" + $scope.ImageSrc2[i] + '" '+"onerror=\"this.style.display='none'\"" + "\>" + "</td>";
       testResult += "<td title=\"Remediation Date\">" + $scope.jsonData[0].Criteria[i].RemediationDate; + "</td>";
       

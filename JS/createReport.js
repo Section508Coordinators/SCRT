@@ -45,7 +45,7 @@ function IsJsonString(str) {
   try {
     JSON.parse(str);
   } catch (e) {
-	alert("There is a problem while trying to convert to JSON format, contact technical support.");
+	alert("Unable to convert the content to JSON format. Please contact accessibility@hq.dhs.gov for technical support.");
 	console.log(str);
 	//return false;
   }
@@ -258,7 +258,7 @@ $scope.addIssue = function(index) {
     }
   }
 
-  alert("Child issue added.");
+  alert("A child issue has been added with the same test criteria.");
 };
 
 $scope.RemoveChildIssue = function(index) {    
@@ -366,7 +366,7 @@ $scope.RemoveChildIssue = function(index) {
 
   if(markRemoval != -1)
     $scope.imgCnvrsn.splice(markRemoval,1);
-  alert("Child issue removed.");
+  alert("The child issue has been removed.");
 };
 
 $scope.elementIsClicked4 = " ";
@@ -783,24 +783,24 @@ $scope.optionchVersn = [{
   },
   {
     id: 1,
-    name: '115-118'
+    name: '144 or new'
   },
   
   {
     id: 2,
-    name: '110-114'
+    name: '132-141'
   },
   {
     id: 3,
-    name: '105-109'
+    name: '121-131'
   },
   {
     id: 4,
-    name: '100-104'
+    name: '109-120'
   },
   {
     id: 5,
-    name: '90-99'
+    name: '109 or previous'
   },
   {
     id: 8,
@@ -822,28 +822,25 @@ $scope.optionsfVersn = [{
   },
   {
     id: 1,
-    name: '18'
+    name: '26.2 or new'
   },
   {
     id: 2,
-    name: '17'
+    name: '18.3 - 26.1'
   },
   {
     id: 3,
-    name: '16'
+    name: '17.3 - 18.2'
   },
   {
     id: 4,
-    name: '15'
+    name: '16.3 - 17.2'
   },
   {
     id: 5,
-    name: '14'
+    name: '15.3 or previous'
   },
-  {
-    id: 6,
-    name: '13'
-  },
+  
   {
     id: 8,
     name: 'None'
@@ -866,23 +863,23 @@ $scope.optionfxVersn = [{
   },
   {
     id: 1,
-    name: '125-135'
+    name: '147 or new'
   },
   {
     id: 2,
-    name: '115-124'
+    name: '134-146'
   },
   {
     id: 3,
-    name: '105-114'
+    name: '122-133'
   },
   {
     id: 4,
-    name: '95-104'
+    name: '110-121'
   },
   {
     id: 5,
-    name: '85-94'
+    name: '109 or previous '
   },
   {
     id: 8,
@@ -1242,17 +1239,17 @@ $scope.loadFile = function loadFile() {
        
  
   if (typeof window.FileReader !== 'function') {
-    alert("Please use file browser which supports the file API.");
+    alert("Please use a file browser that supports the File API.");
     return;
   }
 
   input = document.getElementById('fileinput');
   if (!input) {
-    alert("Make sure you have a file input element.");
+    alert("Please ensure that a file input element is available.");
   } else if (!input.files) {
-    alert("Please use browser that supports the `files` property of file inputs.");
+    alert("Please use browser that supports the `files` property for file input elements.");
   } else if (!input.files[0]) {
-    alert("Please select JSON file first");
+    alert("Please select a JSON file first");
   } else {
     file = input.files[0];
     fr = new FileReader();
@@ -1836,7 +1833,7 @@ $scope.loadFile = function loadFile() {
 	   $scope.default_tstVrsn ='';   
       document.getElementById("msg").innerHTML = "<strong>"+$scope.default_evalMethod +" Version "+$scope.default_tstVrsn + " "+$scope.productID+$scope.versionID+".json"+ "</strong> file load completed.<br> To load a different file, <strong>reload</strong> this page.";		  	  
       if(e !== 'refresh')
-      alert('File loaded.To save changes at any time, use Alt+S or Save button at bottom of the page.');
+      alert(' File loaded. To save changes at any time, press Alt+S or select the Save button at the bottom of the page.');
 	if($scope.default_tstVrsn == "undefined"  )
 	  $scope.updateJSON = true; 
    if($scope.default_tstVrsn == undefined  )
@@ -1851,9 +1848,9 @@ $scope.loadFile = function loadFile() {
      $scope.updateJSON = false;
       //alert('Recommend to use latest JSON file');	
 	if($scope.updateJSON == true && e !== 'refresh') 
-   alert('An updated JSON template is available. However, you may continue to use your current template.');
+   alert('An updated JSON template is available. You may continue using your current template if preferred.');
    if($scope.guidelinesAdded != true && e !== 'refresh')
-	alert('Please use updated JSON template to see standard/guideline for success criteria');
+	alert('Please use updated JSON template to see standard & guideline for success criteria');
  }
   
 }
@@ -1892,7 +1889,7 @@ $scope.remediationDetails = function() {
 		}
 		if($scope.selected_name_rmdtn == 'No'){
 			if($scope.displayIt == false)
-			alert('Please select the approperiate JSON file to  add remediation details.') 
+			alert('Please select the appropriate JSON file to add remediation details.') 
 		    /* if ($scope.checkboxModel.alerts == "on")
 		    alert('Column for Remediation Details Removed.'); */
 		
@@ -3371,11 +3368,18 @@ $scope.testresult1 = '"Criteria":[' + $scope.totTstRslt + ']';
     // Function to escape special characters
     $scope.escapeSpecialChars = function(str) {
         if (typeof str === 'string') {
-            // Replace actual new lines with \n
-            str = str.replace(/\r?\n/g, '\\n');
-
-            // Replace already escaped quotes
+            str = str.replace(/\r?\n/g, ' \\n ');            
             str = str.replace(/\\"/g, '\\"');
+			 str = str.replace(/\n/g, ":");
+			 str = str.replace(/</g, "<.");
+			 str = str.replace(/>/g, ".>");
+			 str = str.replace(/\.{2,}/g, ".");
+			 str = str.replace(/,\s*$/, " ");
+			 str = str.replace(/,+/g, ',');
+			 str = str.replace(/, /g, "");
+			 str = str.replace(/,/g, ", ");	
+						 
+			
 
             // Escape special characters
             return str.replace(/[\b\f\r\t"\\]/g, function (char) {
@@ -3395,7 +3399,7 @@ $scope.testresult1 = '"Criteria":[' + $scope.totTstRslt + ']';
                 }
             });
         } else {
-            return str;
+            return str.trim();
         }
     }
 
@@ -3451,7 +3455,7 @@ $scope.submit1 = function() {
   }
 
   if ($scope.error.length > 0)
-    alert("Please fill mandatory field => " + $scope.error);
+    alert("Please complete all required fields: " + $scope.error);
   /* making sure user selects at least one test result
   else if($scope.originalIssueRsltSelected != true)
   alert("Please select at least one test result to save file.");
