@@ -169,7 +169,7 @@
               <th scope="row" title="Success Criteria" style="width: 102px">{{test1.CrtID}}</th>
               <td style="width: 220px" title="Conformance Level" >{{test1.ConformanceLvl}}</td>
 			  <td style="width: 220px" title="Guideline" > {{test1.Guideline}}  </td> 
-              <td style="width: 400px" title="Remarks & Explanations" > {{test1.RemarkExplntn}}  </td>			  
+              <td style="width: 400px; white-space: pre-line;" title="Remarks & Explanations" > {{test1.RemarkExplntn}}  </td>			  
 			 <!--<td style="width: 450px" title="Impacted Group" > {{test1.DisabilityImpact}}  </td>  -->
         </tr>
 
@@ -235,7 +235,7 @@
                           <div style="width: 85px">Test Name</div>
                         </th>
                         <th scope="col" title="Test ID" id="testid[$index]">
-                          <div style="width: 30px">Test ID</div>
+                          <div style="width: 32px">Test ID</div>
                         </th>
                         <th scope="col" title="Test Condition" id="tc[$index]">
                           <div style="width: 198px"> Test Condition </div>
@@ -254,7 +254,7 @@
 						</th> 
                         
                         <th scope="col" title="Screenshot" id="scrnsht[$index]">
-                          <div style="width: 118px" >Screenshot </div>
+                          <div style="width: 123px" >Screenshot </div>
                         </th>
                         <th style="width: 66px" scope="col" title="Global Issue" id="glbl[$index]">Global Issue </th>
                         <th scope="col" title="Remediation Details" id="rmdtl[$index]">
@@ -307,10 +307,10 @@
 			  </td>
             
               <td title="Selected Global Issue" id="glbl1[$index]">
-                <div style="width: 40px !important"> {{GlobalIssue[$index]}} </div>
+                <div style="width: 43px !important"> {{GlobalIssue[$index]}} </div>
               </td>
               <td title="Entered Remediation Details" id="rmdtl1[$index]" >
-                <div style="width: 199px !important"> {{RemediationDetails[$index] }}</div>
+                <div class="widetd3" > {{RemediationDetails[$index] }}</div>
               </td>
 			  
 			  <td width="151">  <img width="100" id="image2{{$index}}"  ng-src={{ImageSrc2[$index]}}  ng-click="zoom2($index)" class="large-image"   onerror="this.style.display='none';" >
@@ -370,7 +370,7 @@
                 <div style="width: 46px"> {{GlobalIssue[$index]}} </div>
               </td>
               <td title="Entered Remediation Details" id="rmdtl1[$index]" >
-                <div style="width: 201px"> {{RemediationDetails[$index] }}</div>
+                <div class="widetd3" > {{RemediationDetails[$index] }}</div>
               </td>
 			  
 			  <td width="151">  <img width="100" id="image2{{$index}}"  ng-src={{ImageSrc2[$index]}}  ng-click="zoom2($index)" class="large-image"  alt='' onerror="this.style.display='none';" >
