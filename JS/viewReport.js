@@ -13,20 +13,7 @@ function handleError(evt) {
 	  alert('Please select and load valid JSON file for ACRT');
     }*/
 }
-/*
-//commented because this is partially working 
-function IsJsonString(str) {
-  try {
-    JSON.parse(str);
-  } catch (e) {    
-	alert("There is a problem while trying to convert to JSON format, contact technical support.");
-	console.log(str);
-	//return false;
-  }
-  //return true;
-  return JSON.parse(str);
-}		
- */ 
+
  
 function expandCollapse1() {
   var x = document.getElementById("expandCollapse1");
@@ -402,7 +389,7 @@ $scope.countOfRepWords =  function wordFreq(string) {
       $scope.urlID = $scope.jsonData[0].Product.P_Location;
       $scope.flashID = $scope.jsonData[0].Product.P_Flash;
       $scope.javaID = $scope.jsonData[0].Product.P_java;
-      $scope.prodDescID = $scope.jsonData[0].Product.P_Desc;
+      $scope.prodDescID = $scope.jsonData[0].Product.P_Desc.replace(/\\n/g, "\n");
       $scope.prdNteDescID = $scope.jsonData[0].Product.P_Notes.replace(/\\n/g, "\n");
       $scope.compID = $scope.jsonData[0].System.S_Compatibility;
       $scope.myBrowserTested = $scope.jsonData[0].System.S_selectedBrowser;

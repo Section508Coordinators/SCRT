@@ -1993,8 +1993,9 @@ $scope.remarkExplanation = function(i) {
 		$scope.rmdatnDatelIDCollection[i]='';
 	if($scope.rmdatnDtlID[i] == undefined) $scope.rmdatnDtlID[i]='';    
     if($scope.rmdatnDtlID[i] == 'undefined') $scope.rmdatnDtlID[i]='';	
-    $scope.rmdatnDtlID[i] = $scope.rmdatnDtlID[i].toString().replace(/"/g, "'").trim();
-   $scope.rmdatnDtlID[i] = $scope.rmdatnDtlID[i].toString().replace(/\n/g, " ");
+   // $scope.rmdatnDtlID[i] = $scope.rmdatnDtlID[i].toString().replace(/"/g, "'").trim();
+   //$scope.rmdatnDtlID[i] = $scope.rmdatnDtlID[i].toString().replace(/\n/g, " ");
+   $scope.rmdatnDtlID[i] = $scope.escapeSpecialChars($scope.rmdatnDtlID[i].toString());
 	
    $scope.testresult[i] = $scope.testresult[i] +'","RemediationDate": "' + $scope.rmdatnDatelIDCollection[i] +  '","RemediationDetails": "' + $scope.rmdatnDtlID[i]+ '","DraftReport": "' + $scope.draftReport + '"}';
   
@@ -3369,15 +3370,15 @@ $scope.testresult1 = '"Criteria":[' + $scope.totTstRslt + ']';
     $scope.escapeSpecialChars = function(str) {
         if (typeof str === 'string') {
             str = str.replace(/\r?\n/g, ' \\n ');            
-            str = str.replace(/\\"/g, '\\"');
-			 str = str.replace(/\n/g, ":");
+            str = str.replace(/\\"/g, '\\"');			
 			 str = str.replace(/</g, "<.");
-			 str = str.replace(/>/g, ".>");
+			str = str.replace(/>/g, ".>");
 			 str = str.replace(/\.{2,}/g, ".");
-			 str = str.replace(/,\s*$/, " ");
-			 str = str.replace(/,+/g, ',');
-			 str = str.replace(/, /g, "");
-			 str = str.replace(/,/g, ", ");	
+			 //str = str.replace(/,\s*$/, " ");
+			 //str = str.replace(/,+/g, ',');
+			 //str = str.replace(/, /g, "");
+			 //str = str.replace(/,/g, ", ");	
+			  //str = str.replace(/\n/g, ":");
 						 
 			
 
