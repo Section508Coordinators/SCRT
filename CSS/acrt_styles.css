@@ -692,6 +692,8 @@ article {
 .widetd3{    
     width: 200px;	
 	display: inline-block;	
+	white-space: pre-wrap;
+	
 }
 .widetd4{    
     width: 86px;	
