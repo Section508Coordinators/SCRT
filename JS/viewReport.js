@@ -908,7 +908,7 @@ document.getElementById("dsblGrpBtn").click();
       
       
       $scope.capturedFormData +=
-      "<b>Your feedback is important to us! Please take the <a title=\"SCRT Survey\" href= \"https://www.surveymonkey.com/r/DHSACRT\" target=\"_blank\"   id=\"surveyID\"> SCRT Survey </a> </b>"+
+      "<b>Your feedback is important to us! Please take the <a title=\"SCRT Survey\" href= \"https://forms.cloud.microsoft/g/636W1Kh8b7?origin=lprLink\" target=\"_blank\"   id=\"surveyID\"> SCRT Survey </a> </b>"+
       "<h2> End of Report </h2>" +
       "<script>function myPrint(){window.print(); }; if(document.getElementById('isDraftValue').value==\"true\")document.getElementById('draftMsg').style.display = \"block\";  </script>" +
       "<script> function zoom("+0+") { var modal = document.getElementById("+0+"); var img = document.getElementById(\"image\" + "+0+"); var modalImg = document.getElementById(\"img\" + "+0+"); var captionText = document.getElementById(\"caption\" + "+0+"); var span = document.getElementsByClassName(\"close\")["+0+"]; img.onclick = function() { modal.style.display = \"block\"; modalImg.src = this.src; captionText.innerHTML = this.alt; }span.onclick = function() { modal.style.display = \"none\"; } } </script>"+     
