@@ -2,7 +2,7 @@
 # Project Title
 **Section 508 Compliance Reporting Tool (SCRT)** 
 
-SCRT is a browser-based standalone application for recording accessibility test results from Trusted Testers. All input data will be stored as JSON &/or html files in the local machine which can be shared as needed. Information in the JSON file can be further manipulated for analytics and reporting purposes as needed. Try SCRT [Here] ( https://section508coordinators.github.io/SCRT/ )
+SCRT is a browser-based standalone application for recording accessibility test results from Trusted Testers. All input data will be stored as JSON &/or html files in the local machine which can be shared as needed. Information in the JSON file can be further manipulated for analytics and reporting purposes as needed. Try SCRT [Here]( https://section508coordinators.github.io/SCRT/ )
 
 ## Getting Started
 1) Download the SCRT files to your local machine from the repository. The default location is the Downloads folder. On the [main page](https://github.com/Section508Coordinators/SCRT), select the Code button above and select "Download ZIP". Once downloaded, unzip/extract files. 
